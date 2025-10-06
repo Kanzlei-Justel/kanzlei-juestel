@@ -1,0 +1,42 @@
+
+:root{
+  --brand-dark:#4f646d; /* an Briefkopf anpassen */
+  --brand-accent:#e5563a;
+  --text:#243036; --muted:#6b7a83; --bg:#ffffff; --bg-alt:#f6f8f9; --border:#e5eaed;
+}
+*{box-sizing:border-box}html,body{margin:0;padding:0}body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial;
+  color:var(--text);background:var(--bg);line-height:1.6;
+}
+.container{width:min(1100px,92%);margin:0 auto}
+.header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--border)}
+.brand{display:flex;align-items:baseline;gap:.4rem;font-weight:700;letter-spacing:.08em}
+.brand .a{color:var(--brand-dark)}.brand .b{color:var(--brand-accent)}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+.nav{display:flex;gap:1rem;flex-wrap:wrap}
+.nav a{text-decoration:none;color:var(--text);padding:.4rem .6rem;border-radius:.5rem}
+.nav a.active,.nav a:hover{background:var(--bg-alt)}
+.hero{display:grid;grid-template-columns:1fr;gap:1.25rem;padding:2rem 0 1rem}
+.hero img{width:100%;height:auto;border-radius:.75rem;box-shadow:0 10px 30px rgba(0,0,0,.07)}
+.hero .lead{font-size:clamp(1.05rem,1.2vw + .9rem,1.25rem)}
+.section{padding:2rem 0}.section.alt{background:var(--bg-alt)}
+.h1{font-size:clamp(1.5rem,1.6vw + 1.2rem,2.2rem);margin:0 0 1rem;font-weight:800;color:var(--brand-dark)}
+.h2{font-size:1.35rem;margin:1.2rem 0 .4rem}
+.hr{height:1px;background:var(--border);margin:1rem 0}
+.card{background:var(--bg);border:1px solid var(--border);border-radius:.9rem;padding:1rem;box-shadow:0 8px 24px rgba(10,25,41,.03)}
+.grid{display:grid;gap:1rem}.grid-2{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+.icon{width:28px;height:28px;flex:0 0 28px}
+.flex{display:flex;align-items:flex-start;gap:.75rem}
+.small{font-size:.92rem;color:var(--muted)}.list{margin:.4rem 0 .8rem 1.1rem}
+footer{border-top:1px solid var(--border);padding:1.25rem 0 3rem;margin-top:2rem}
+footer .foot{display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center;justify-content:space-between}
+.addresses{display:grid;gap:.6rem}.addresses .addr{font-size:.95rem;color:var(--muted)}
+.notice{background:#fff7f5;border:1px solid #ffd9d2;color:#742d22;padding:.9rem;border-radius:.6rem}
+.legal p{margin:.6rem 0}.legal h2,.legal h3{margin-top:1.2rem}
+.btn{display:inline-block;padding:.6rem .9rem;border:1px solid var(--border);border-radius:.6rem;text-decoration:none;color:var(--text)}
+.btn:hover{background:var(--bg-alt)}.current{color:var(--brand-accent)!important;background:transparent!important}
+img{max-width:100%;height:auto}
+
+/* Portraitbild auf Team-Seite */
+.portrait{width:min(260px,45%);border-radius:.75rem;box-shadow:0 10px 30px rgba(0,0,0,.07)}
