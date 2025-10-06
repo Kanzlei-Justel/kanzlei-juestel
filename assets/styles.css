@@ -40,3 +40,7 @@ img{max-width:100%;height:auto}
 
 /* Portraitbild auf Team-Seite */
 .portrait{width:min(260px,45%);border-radius:.75rem;box-shadow:0 10px 30px rgba(0,0,0,.07)}
+
+/* Dezente Namenszeile für Team-Rechts (nicht fett, etwas größer) */
+.person-name{font-size:1.15rem;margin:.2rem 0 .2rem 0;color:var(--text);font-weight:500}
+.person-role{color:var(--muted);margin:0 0 .6rem 0}
