@@ -2,25 +2,25 @@
    Kanzlei JÜSTEL – Global Styles
    ================================ */
 :root{
-  --bg: #ffffff;         /* weißer Hintergrund */
+  --bg: #ffffff;
   --text: #1f1f1f;
   --muted: #5a666b;
-  --accent: #e78a2b;     /* Kanzlei-Orange */
+  --accent: #e78a2b;
   --accent-dark: #c67321;
-  --header-bg: #ffffff;  /* weißer Header */
+  --header-bg: #ffffff;
   --header-border: #eaeaea;
   --panel: #f6f6f6;
   --panel-border: #e6e6e6;
   --radius: 8px;
-  /* dezente rosa Hinweisfläche (Kontakt) */
   --notice-bg: #fdecef;
   --notice-border: #f4cbd4;
   --notice-text: #6b2b36;
 }
 
-/* Reset & Basics */
+/* Reset */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+
 @font-face{
   font-family:'PF Agora Slab Pro';
   src:url('assets/fonts/pf-agora-slab-pro.woff2') format('woff2'),
@@ -29,38 +29,41 @@ html{scroll-behavior:smooth}
   font-style:normal;
   font-display:swap;
 }
+
 body{
   font-family:'PF Agora Slab Pro', serif;
-  font-size:17px;                 /* dezenter Grundtext */
+  font-size:17px;
   line-height:1.6;
   color:var(--text);
   background:var(--bg);
 }
+
 a{color:var(--accent);text-decoration:none}
 a:hover{color:var(--accent-dark);text-decoration:underline}
+
 .container{width:min(1100px,92%);margin:0 auto}
 
-/* Header / Nav – jetzt weiß mit dünner Linie */
+/* ================= Header / Navigation ================= */
 .header{
   background:var(--header-bg);
   color:var(--text);
   border-bottom:1px solid var(--header-border);
-  padding:0.8rem 0;
+  padding:.85rem 0;
 }
 .navbar{display:flex;justify-content:space-between;align-items:center}
-.brand .a{font-weight:700;margin-right:.35rem;letter-spacing:.5px;color:var(--text)}
+.brand .a{font-weight:700;margin-right:.35rem;color:var(--text)}
 .brand .b{font-weight:800;color:var(--accent)}
-.nav a{margin-left:1rem;color:var(--text);text-decoration:none;font-weight:600}
+.nav a{margin-left:1rem;color:var(--text);font-weight:600}
 .nav a:hover,.nav a[aria-current="page"]{color:var(--accent)}
 
-/* Headings & Text rhythm */
+/* ================= Typografie ================= */
 .h1{font-size:2rem;font-weight:800;color:#3b4a51;margin:1.25rem 0 1rem}
-h2{font-size:1.25rem;margin:1.1rem 0 .5rem}
+h2{font-size:1.25rem;margin:1.1rem 0 .6rem}
 p{margin:.8rem 0}
 ul{margin:.5rem 0 1.1rem 1.1rem}
 li{margin:.25rem 0}
 
-/* Buttons */
+/* ================= Buttons ================= */
 .btn{
   display:inline-block;
   padding:.58rem 1.05rem;
@@ -74,84 +77,108 @@ li{margin:.25rem 0}
 .btn:hover{background:var(--accent);border-color:var(--accent);color:#111}
 .btn:active{transform:scale(.99)}
 
-/* ---------- Startseite (dein Stand ist ok) ---------- */
+/* ================= Startseite ================= */
 .intro-wrapper{display:flex;gap:2.2rem;align-items:flex-start;margin:3rem 0}
 .portrait{width:230px;border-radius:var(--radius);object-fit:cover;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .intro-text{max-width:700px}
 
-/* ---------- Kontakt ---------- */
-.hinweis{
-  background:var(--notice-bg);
-  color:var(--notice-text);
-  border:1px solid var(--notice-border);
-  padding:1rem 1.2rem;
-  border-radius:8px;
-  margin:2rem 0 1.2rem;
-}
-.hinweis a{color:inherit;text-decoration:underline}
-
+/* ================= Kontakt ================= */
 .kontakt-grid{
   display:flex;
   gap:2rem;
-  justify-content:space-between;
   align-items:stretch;
-  margin: 1.5rem 0 2.5rem;
+  margin:2rem 0 2.5rem;
 }
 .kontakt-box{
-  flex:1 1 0;
+  flex:1;
   background:var(--panel);
   border:1px solid var(--panel-border);
   border-radius:8px;
   padding:1.1rem 1.2rem;
 }
 .kontakt-box h2{margin-bottom:.4rem}
-.kontakt-box p{margin:.35rem 0}
+.hinweis{
+  background:var(--notice-bg);
+  color:var(--notice-text);
+  border:1px solid var(--notice-border);
+  padding:1rem 1.2rem;
+  border-radius:8px;
+  margin:1.8rem 0 1.2rem;
+}
+.hinweis a{color:inherit;text-decoration:underline}
 
-/* ---------- Team ---------- */
-.team-flex{
+/* ================= Team ================= */
+.team-grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap:2rem;
   margin:1.25rem 0 2rem;
 }
-.team-item{
+.team-card{
   background:var(--panel);
   border:1px solid var(--panel-border);
   border-radius:8px;
   padding:1rem 1.2rem;
 }
+.team-chip{
+  display:inline-block;
+  font-size:.95rem;
+  background:#f0f2f4;
+  border:1px solid #e2e6e9;
+  color:#3b4a51;
+  padding:.25rem .5rem;
+  border-radius:999px;
+  margin-bottom:.6rem;
+}
+.team-body{
+  display:flex;
+  gap:1rem;
+  align-items:flex-start;
+}
 .team-photo{
-  width:220px;         /* nicht riesig */
+  width:160px;
   height:auto;
   border-radius:8px;
-  margin-bottom:.6rem;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
+  flex-shrink:0;
 }
-/* Chronologie */
-.cv{list-style:none;margin:.25rem 0 0 0}
-.cv li{display:flex;gap:1rem;margin:.3rem 0}
-.cv .year{min-width:6rem;font-weight:700;color:#3b4a51}
-.cv .text{flex:1}
+.team-info h2{margin:.2rem 0 .4rem}
 
-/* ---------- Rechtsgebiete (Text pur) ---------- */
+/* CV-GRID: Jahr/Label links — Text rechts */
+.cv-grid{
+  display:grid;
+  grid-template-columns: 8rem 1fr;
+  column-gap:1rem;
+  row-gap:.45rem;
+  margin-top:.45rem;
+}
+.cv-grid dt{
+  font-weight:700;
+  color:#3b4a51;
+}
+.cv-grid dd{margin:0}
+
+/* ================= Rechtsgebiete ================= */
 .rechtsgebiete .rg-section{margin:1.25rem 0 1.75rem}
 .rechtsgebiete h2{font-size:1.25rem;margin-bottom:.35rem}
 
-/* ---------- Legal-Dokumente (Impressum / Datenschutz) ---------- */
+/* ================= Legal pages (Impressum/Datenschutz) ================= */
 .legal{max-width:900px;margin:2rem auto}
+.legal p,.legal li{font-size:16px}
 .legal h1{margin-top:1.25rem}
 .legal h2{margin-top:1.1rem}
-.legal p, .legal li{font-size:16px}        /* kleiner, wie gewünscht */
 .legal ul{margin-left:1.1rem}
 .legal a{word-break:break-word}
 
-/* ---------- Responsiv ---------- */
+/* ================= Responsive ================= */
 @media (max-width: 900px){
   .intro-wrapper{flex-direction:column;text-align:center}
   .portrait{margin:0 auto}
-  .intro-text{text-align:left}
   .kontakt-grid{flex-direction:column}
-  .team-flex{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr}
+  .team-body{flex-direction:column;align-items:center}
+  .team-photo{width:200px}
+  .cv-grid{grid-template-columns:7rem 1fr}
 }
 @media (max-width: 480px){
   .h1{font-size:1.8rem}
