@@ -1,23 +1,21 @@
 /* ================================
    Kanzlei JÜSTEL – Grundstyles
-   Farben via Variablen, damit
-   Desktop & Mobile identisch sind
    ================================ */
-
 :root{
   --bg: #ffffff;
   --text: #1f1f1f;
   --muted: #5a666b;
-  --accent: #e78a2b;     /* Kanzlei-Orange (kein gelb) */
-  --accent-dark: #c67321;/* Hover/Focus */
+  --accent: #e78a2b;     /* Kanzlei-Orange */
+  --accent-dark: #c67321;/* Hover */
   --header: #111111;     /* dunkler Header */
+  --panel: #f6f6f6;
   --radius: 8px;
 }
 
 /* Reset */
 *{margin:0;padding:0;box-sizing:border-box}
 
-/* Schriftart einbinden (Lizenz vorausgesetzt) */
+/* Schrift (Lizenz vorausgesetzt) */
 @font-face{
   font-family:'PF Agora Slab Pro';
   src:url('assets/fonts/pf-agora-slab-pro.woff2') format('woff2'),
@@ -36,75 +34,42 @@ body{
   background:var(--bg);
 }
 
-/* Layout-Helfer */
+/* Layout */
 .container{width:min(1100px,92%);margin:0 auto}
 
 /* Header & Navigation */
-.header{
-  background:var(--header);
-  color:#fff;
-  padding:1rem 0;
-}
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+.header{background:var(--header);color:#fff;padding:1rem 0}
+.navbar{display:flex;justify-content:space-between;align-items:center}
 .brand .a{font-weight:700;margin-right:.35rem;letter-spacing:.5px}
 .brand .b{font-weight:800;color:var(--accent)}
-.nav a{
-  margin-left:1rem;
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
-}
-.nav a:hover,
-.nav a[aria-current="page"]{color:var(--accent)}
+.nav a{margin-left:1rem;color:#fff;text-decoration:none;font-weight:600}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--accent)}
 
-/* Intro-Bereich */
-.intro-wrapper{
-  display:flex;
-  gap:2.2rem;
-  align-items:flex-start;
-  margin:3rem 0;
-}
-.portrait{
-  width:230px;
-  border-radius:var(--radius);
-  object-fit:cover;
-  box-shadow:0 2px 10px rgba(0,0,0,.06);
-}
+/* Startseite – Intro */
+.intro-wrapper{display:flex;gap:2.2rem;align-items:flex-start;margin:3rem 0}
+.portrait{width:230px;border-radius:var(--radius);object-fit:cover;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .intro-text{max-width:700px}
-.h1{
-  font-size:2.15rem;
-  font-weight:800;
-  color:#3b4a51;
-  margin-bottom:1rem;
-}
-.intro-text p{color:var(--text);margin:.85rem 0}
+.h1{font-size:2.15rem;font-weight:800;color:#3b4a51;margin-bottom:1rem}
+.intro-text p{margin:.85rem 0}
 .intro-text strong{font-weight:700}
 
 /* Buttons */
 .btn{
   display:inline-block;
   padding:.62rem 1.15rem;
-  margin:.9rem 0 1.2rem 0;
+  margin:1.0rem 0 1.2rem 0;
   background:var(--header);
   border:2px solid var(--header);
   color:#fff;
   text-decoration:none;
   font-weight:700;
   border-radius:6px;
-  transition:background .2s,border-color .2s,color .2s,transform .06s ease-in;
+  transition:background .2s,border-color .2s,color .2s,transform .06s;
 }
-.btn:hover{
-  background:var(--accent);
-  border-color:var(--accent);
-  color:#111;
-}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:#111}
 .btn:active{transform:scale(.99)}
 
-/* Kontaktlink – dezent, CI-konform */
+/* Kontaktlink */
 .contact-link{
   font-weight:700;
   color:var(--text);
@@ -113,24 +78,30 @@ body{
   padding-bottom:.05rem;
   transition:color .2s,border-color .2s;
 }
-.contact-link:hover{
-  color:var(--accent);
-  border-color:var(--header);
-}
+.contact-link:hover{color:var(--accent);border-color:var(--header)}
 
-/* Listen (falls benötigt) */
+/* Listen (falls genutzt) */
 ul{margin:.5rem 0 1.2rem 1.2rem}
 li{margin:.25rem 0}
 
-/* Mobile/Tablet – gleiche Farben beibehalten */
+/* Kontaktseite – Hinweis + Grid (für spätere Nutzung bereits drin) */
+.hinweis{background:#c72a2a;color:#fff;padding:1rem;border-radius:6px;margin:2rem 0}
+.kontakt-grid{display:flex;gap:2rem;justify-content:space-between}
+.kontakt-box{flex:1;background:var(--panel);padding:1.2rem;border-radius:8px}
+
+/* Team – nebeneinander (für spätere Nutzung bereits drin) */
+.team-flex{display:flex;gap:3rem;margin-top:2rem}
+.team-item img{width:240px;border-radius:8px;margin-bottom:.5rem}
+.team-item h2{margin-bottom:.25rem}
+
+/* Responsiv */
 @media (max-width: 820px){
   .intro-wrapper{flex-direction:column;text-align:center}
   .portrait{margin:0 auto}
   .intro-text{text-align:left}
   .btn{align-self:flex-start}
+  .kontakt-grid,.team-flex{flex-direction:column}
 }
-
-/* Kleinere Phones */
 @media (max-width: 480px){
   .h1{font-size:1.9rem}
   .portrait{width:210px}
