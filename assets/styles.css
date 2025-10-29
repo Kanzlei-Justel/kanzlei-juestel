@@ -7,11 +7,11 @@
   --muted: #5a666b;
   --accent: #e78a2b;     /* Kanzlei-Orange */
   --accent-dark: #c67321;
-  --header: #111111;     /* dunkler Header */
+  --header-bg: #ffffff;  /* weißer Header */
+  --header-border: #eaeaea;
   --panel: #f6f6f6;
   --panel-border: #e6e6e6;
   --radius: 8px;
-
   /* dezente rosa Hinweisfläche (Kontakt) */
   --notice-bg: #fdecef;
   --notice-border: #f4cbd4;
@@ -31,7 +31,7 @@ html{scroll-behavior:smooth}
 }
 body{
   font-family:'PF Agora Slab Pro', serif;
-  font-size:18px;
+  font-size:17px;                 /* dezenter Grundtext */
   line-height:1.6;
   color:var(--text);
   background:var(--bg);
@@ -40,27 +40,32 @@ a{color:var(--accent);text-decoration:none}
 a:hover{color:var(--accent-dark);text-decoration:underline}
 .container{width:min(1100px,92%);margin:0 auto}
 
-/* Header / Nav */
-.header{background:var(--header);color:#fff;padding:1rem 0}
+/* Header / Nav – jetzt weiß mit dünner Linie */
+.header{
+  background:var(--header-bg);
+  color:var(--text);
+  border-bottom:1px solid var(--header-border);
+  padding:0.8rem 0;
+}
 .navbar{display:flex;justify-content:space-between;align-items:center}
-.brand .a{font-weight:700;margin-right:.35rem;letter-spacing:.5px}
+.brand .a{font-weight:700;margin-right:.35rem;letter-spacing:.5px;color:var(--text)}
 .brand .b{font-weight:800;color:var(--accent)}
-.nav a{margin-left:1rem;color:#fff;text-decoration:none;font-weight:600}
+.nav a{margin-left:1rem;color:var(--text);text-decoration:none;font-weight:600}
 .nav a:hover,.nav a[aria-current="page"]{color:var(--accent)}
 
 /* Headings & Text rhythm */
-.h1{font-size:2.15rem;font-weight:800;color:#3b4a51;margin:1.25rem 0 1rem}
-h2{font-size:1.35rem;margin:1.1rem 0 .5rem}
-p{margin:.85rem 0}
-ul{margin:.5rem 0 1.2rem 1.2rem}
+.h1{font-size:2rem;font-weight:800;color:#3b4a51;margin:1.25rem 0 1rem}
+h2{font-size:1.25rem;margin:1.1rem 0 .5rem}
+p{margin:.8rem 0}
+ul{margin:.5rem 0 1.1rem 1.1rem}
 li{margin:.25rem 0}
 
 /* Buttons */
 .btn{
   display:inline-block;
-  padding:.62rem 1.15rem;
-  background:var(--header);
-  border:2px solid var(--header);
+  padding:.58rem 1.05rem;
+  background:#222;
+  border:2px solid #222;
   color:#fff;
   font-weight:700;
   border-radius:6px;
@@ -69,17 +74,12 @@ li{margin:.25rem 0}
 .btn:hover{background:var(--accent);border-color:var(--accent);color:#111}
 .btn:active{transform:scale(.99)}
 
-/* ---------- Startseite: Intro (bereits okay) ---------- */
+/* ---------- Startseite (dein Stand ist ok) ---------- */
 .intro-wrapper{display:flex;gap:2.2rem;align-items:flex-start;margin:3rem 0}
 .portrait{width:230px;border-radius:var(--radius);object-fit:cover;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .intro-text{max-width:700px}
 
-/* ---------- Rechtsgebiete (Text pur) ---------- */
-.rechtsgebiete .rg-section{margin:1.25rem 0 1.75rem}
-.rechtsgebiete h2{font-size:1.35rem;margin-bottom:.35rem}
-
 /* ---------- Kontakt ---------- */
-/* dezenter rosa Hinweis wie früher */
 .hinweis{
   background:var(--notice-bg);
   color:var(--notice-text);
@@ -121,23 +121,27 @@ li{margin:.25rem 0}
   padding:1rem 1.2rem;
 }
 .team-photo{
-  width:220px;              /* nicht riesig */
+  width:220px;         /* nicht riesig */
   height:auto;
   border-radius:8px;
   margin-bottom:.6rem;
   box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
-/* Chronologie-Liste (sauber wie im Scan) */
+/* Chronologie */
 .cv{list-style:none;margin:.25rem 0 0 0}
 .cv li{display:flex;gap:1rem;margin:.3rem 0}
-.cv .year{min-width:6.2rem;font-weight:700;color:#3b4a51}   /* Jahr-Spalte links */
+.cv .year{min-width:6rem;font-weight:700;color:#3b4a51}
 .cv .text{flex:1}
+
+/* ---------- Rechtsgebiete (Text pur) ---------- */
+.rechtsgebiete .rg-section{margin:1.25rem 0 1.75rem}
+.rechtsgebiete h2{font-size:1.25rem;margin-bottom:.35rem}
 
 /* ---------- Legal-Dokumente (Impressum / Datenschutz) ---------- */
 .legal{max-width:900px;margin:2rem auto}
 .legal h1{margin-top:1.25rem}
 .legal h2{margin-top:1.1rem}
-.legal p, .legal li{font-size:17px}
+.legal p, .legal li{font-size:16px}        /* kleiner, wie gewünscht */
 .legal ul{margin-left:1.1rem}
 .legal a{word-break:break-word}
 
@@ -150,6 +154,6 @@ li{margin:.25rem 0}
   .team-flex{grid-template-columns:1fr}
 }
 @media (max-width: 480px){
-  .h1{font-size:1.9rem}
+  .h1{font-size:1.8rem}
   .portrait{width:210px}
 }
