@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kanzlei JÜSTEL – Team</title>
-  <link rel="stylesheet" href="assets/styles.css?v=5">
+  <link rel="stylesheet" href="assets/styles.css?v=6">
   <link rel="icon" href="assets/img/favicon.ico">
 </head>
 <body>
@@ -30,12 +30,12 @@
     <!-- Dorte Jüstel -->
     <article class="team-card">
       <div class="team-body">
-        <!-- WICHTIG: exakter Pfad & Schreibweise -->
         <img
-          src="./assets/img/DorteKanzlei.jpeg"
-          alt="Rechtsanwältin Dorte Jüstel"
           class="team-photo"
+          alt="Rechtsanwältin Dorte Jüstel"
           width="160" height="214"
+          src="assets/img/DorteKanzlei.jpeg"
+          data-fallback="assets/img/juestel.jpg, assets/img/Juestel.jpg, assets/img/dorte.jpg, assets/img/DorteKanzlei.jpg, assets/img/DorteKanzlei.JPG, assets/img/juestel.jpeg"
           loading="eager">
         <div class="team-info">
           <h2>Rechtsanwältin Dorte Jüstel</h2>
@@ -56,10 +56,11 @@
     <article class="team-card">
       <div class="team-body">
         <img
-          src="./assets/img/Kathleen.jpg"
-          alt="Kathleen Wichmann"
           class="team-photo"
+          alt="Kathleen Wichmann"
           width="160" height="160"
+          src="assets/img/Kathleen.jpg"
+          data-fallback="assets/img/kathleen.jpg, assets/img/Kathleen.jpeg, assets/img/Kathleen.JPG, assets/img/kathi.jpg, assets/img/kathi.jpeg"
           loading="eager">
         <div class="team-info">
           <h2>Kathleen Wichmann</h2>
@@ -75,5 +76,27 @@
 
   </div>
 </main>
+
+<!-- Mini-Fallback-Script: probiert alternative Dateinamen aus, bis ein Bild lädt -->
+<script>
+(function () {
+  document.querySelectorAll('img[data-fallback]').forEach(function (img) {
+    var list = img.getAttribute('data-fallback')
+      .split(',')
+      .map(function (s) { return s.trim(); })
+      .filter(Boolean);
+    var i = 0;
+
+    img.addEventListener('error', function handler() {
+      if (i < list.length) {
+        img.src = list[i++];
+      } else {
+        img.removeEventListener('error', handler);
+        img.style.display = 'none'; // wenn gar nichts vorhanden ist, Box ausblenden
+      }
+    }, { once: false });
+  });
+})();
+</script>
 </body>
 </html>
