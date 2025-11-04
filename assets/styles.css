@@ -6,15 +6,13 @@
   --text: #4c5a5f;           /* elegantes Grau aus dem Logo */
   --muted: #707c80;
   --accent: #e56a44;         /* Kanzlei-Orange (Logo) */
+  --accent-light: #fbe9e2;   /* helles, dezentes Orange für Hintergründe */
   --accent-dark: #c55630;
   --header-bg: #ffffff;
   --header-border: #e6e6e6;
   --panel: #f8f8f8;
   --panel-border: #e2e2e2;
   --radius: 8px;
-  --notice-bg: #fef4f0;
-  --notice-border: #f5d3c7;
-  --notice-text: #5b3c33;
 }
 
 /* Reset & Base */
@@ -119,15 +117,19 @@ li{margin:.25rem 0}
   padding:1.1rem 1.2rem;
 }
 .kontakt-box h2{margin-bottom:.4rem}
+
+/* Dezent orange hinterlegter Hinweis-Kasten */
 .hinweis{
-  background:var(--accent);
-  color:#fff;
-  border:1px solid var(--accent-dark);
-  padding:1rem 1.2rem;
+  background:var(--accent-light);
+  color:var(--text);
+  border:1px solid var(--accent);
+  padding:1.1rem 1.3rem;
   border-radius:var(--radius);
   margin:1.5rem 0 2rem;
 }
-.hinweis a{color:#fff;text-decoration:underline}
+.hinweis strong{color:var(--accent-dark);}
+.hinweis a{color:var(--accent-dark);text-decoration:underline}
+.hinweis a:hover{color:var(--accent)}
 
 /* ================= Team ================= */
 .team-grid{
