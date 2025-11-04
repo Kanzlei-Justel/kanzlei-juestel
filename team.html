@@ -4,9 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kanzlei JÜSTEL – Team</title>
-  <link rel="stylesheet" href="assets/styles.css?v=6">
+  <link rel="stylesheet" href="assets/styles.css">
   <link rel="icon" href="assets/img/favicon.ico">
+
+  <meta name="description" content="Team der Kanzlei Jüstel – Rechtsanwältin Dorte Jüstel und Rechtsanwalts- und Notarfachangestellte Kathleen Wichmann.">
+  <meta name="keywords" content="Kanzlei Jüstel, Dorte Jüstel, Kathleen Wichmann, Rechtsanwältin, Rechtsanwalts- und Notarfachangestellte, Berlin, Neustrelitz, Neubrandenburg">
 </head>
+
 <body>
 <header class="header">
   <div class="container navbar">
@@ -28,75 +32,57 @@
   <div class="team-grid">
 
     <!-- Dorte Jüstel -->
-    <article class="team-card">
+    <section class="team-card">
       <div class="team-body">
-        <img
-          class="team-photo"
-          alt="Rechtsanwältin Dorte Jüstel"
-          width="160" height="214"
-          src="assets/img/DorteKanzlei.jpeg"
-          data-fallback="assets/img/juestel.jpg, assets/img/Juestel.jpg, assets/img/dorte.jpg, assets/img/DorteKanzlei.jpg, assets/img/DorteKanzlei.JPG, assets/img/juestel.jpeg"
-          loading="eager">
+        <img src="assets/img/juestel.jpg" alt="Rechtsanwältin Dorte Jüstel" class="team-photo">
         <div class="team-info">
-          <h2>Rechtsanwältin Dorte Jüstel</h2>
+          <div class="team-chip">Rechtsanwältin</div>
+          <h2>Dorte Jüstel</h2>
+
           <dl class="cv-grid">
-            <dt>2018</dt><dd>Gründung Zweigstelle Neubrandenburg</dd>
-            <dt>2017</dt><dd>Gründung Zweigstelle Neustrelitz</dd>
-            <dt>2012</dt><dd>Gründung der Kanzlei Jüstel</dd>
-            <dt>2007–2012</dt><dd>Tätigkeit in auf Immobilien- und Mietrecht spezialisierten Kanzleien; ab 2008 Leitung Anwaltsbereich/Notarvertretung, Berlin-Grunewald</dd>
-            <dt>Fachanwalts­lehrgang</dt><dd>Miet- und Wohnungseigentumsrecht</dd>
-            <dt>Referendariat</dt><dd>Bezirk des Kammergerichts Berlin</dd>
-            <dt>Studium</dt><dd>Humboldt-Universität zu Berlin & Karls-Universität Prag</dd>
+            <dt>2018</dt>
+            <dd>Gründung der Zweigstelle Neubrandenburg</dd>
+
+            <dt>2017</dt>
+            <dd>Gründung der Zweigstelle Neustrelitz</dd>
+
+            <dt>2012</dt>
+            <dd>Gründung der Kanzlei Jüstel</dd>
+
+            <dt>2007–2012</dt>
+            <dd>Tätigkeit in auf Immobilien- und Mietrecht spezialisierten Kanzleien; ab 2008 Leitung des Anwaltsbereichs und Notarvertretung in einer renommierten Kanzlei in Berlin-Grunewald</dd>
+
+            <dt>seit 2023</dt>
+            <dd>Derzeit Fachanwaltslehrgang Miet- und Wohnungseigentumsrecht (laufend)</dd>
+
+            <dt>Referendariat</dt>
+            <dd>Referendariat im Bezirk des Kammergerichts in Berlin</dd>
+
+            <dt>Studium</dt>
+            <dd>Studium an der Humboldt-Universität zu Berlin und der Karls-Universität in Prag</dd>
           </dl>
+
+          <p class="team-mail">E-Mail: juestel(at)kanzlei-juestel.de</p>
         </div>
       </div>
-    </article>
+    </section>
 
     <!-- Kathleen Wichmann -->
-    <article class="team-card">
-      <div class="team-body">
-        <img
-          class="team-photo"
-          alt="Kathleen Wichmann"
-          width="160" height="160"
-          src="assets/img/Kathleen.jpg"
-          data-fallback="assets/img/kathleen.jpg, assets/img/Kathleen.jpeg, assets/img/Kathleen.JPG, assets/img/kathi.jpg, assets/img/kathi.jpeg"
-          loading="eager">
-        <div class="team-info">
-          <h2>Kathleen Wichmann</h2>
-          <p>Rechtsanwalts- und Notarfachangestellte</p>
-          <dl class="cv-grid">
-            <dt>2016–2019</dt><dd>Ausbildung zur Rechtsanwalts- und Notarfachangestellten</dd>
-            <dt>2021</dt><dd>Lehrgang zur Fachreferentin für Kostenrecht</dd>
-            <dt>2021</dt><dd>Lehrgang zur Fachreferentin für Zwangsvollstreckungs- und Insolvenzrecht</dd>
-          </dl>
-        </div>
+    <section class="team-card">
+      <div class="team-info">
+        <h2 class="team-heading-secondary">
+          Rechtsanwalts- und Notarfachangestellte Kathleen Wichmann
+        </h2>
+
+        <ul class="team-list">
+          <li>2016–2019 Ausbildung zur Rechtsanwalts- und Notarfachangestellten</li>
+          <li>2021 Lehrgang zur Fachreferentin für Zwangsvollstreckungs- und Insolvenzrecht</li>
+          <li>2022 Lehrgang zur Fachreferentin für Kostenrecht</li>
+        </ul>
       </div>
-    </article>
+    </section>
 
   </div>
 </main>
-
-<!-- Mini-Fallback-Script: probiert alternative Dateinamen aus, bis ein Bild lädt -->
-<script>
-(function () {
-  document.querySelectorAll('img[data-fallback]').forEach(function (img) {
-    var list = img.getAttribute('data-fallback')
-      .split(',')
-      .map(function (s) { return s.trim(); })
-      .filter(Boolean);
-    var i = 0;
-
-    img.addEventListener('error', function handler() {
-      if (i < list.length) {
-        img.src = list[i++];
-      } else {
-        img.removeEventListener('error', handler);
-        img.style.display = 'none'; // wenn gar nichts vorhanden ist, Box ausblenden
-      }
-    }, { once: false });
-  });
-})();
-</script>
 </body>
 </html>
